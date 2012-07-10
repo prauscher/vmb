@@ -1,0 +1,25 @@
+body {
+	background-color: #CCCCCC;
+	color: #000000;
+	font-family:sans-serif;
+	margin-left:10px;
+	margin-bottom:100px;
+	background-image:url('logo.png');
+	background-repeat:no-repeat;
+	background-position:bottom center;
+}
+
+#content {
+	margin:20px auto;
+	padding:10px;
+	width:800px;
+	background-color:white;
+	border:2px solid black;
+	-moz-border-radius:15px;
+	color:black;
+}
+
+/* Logo wird als body-bg angezeigt */
+#logo {
+	display:none;
+}

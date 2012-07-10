@@ -1,0 +1,53 @@
+Installation des Limesurvey-Scripts
+###################################
+
+Autor: prauscher <prauscher@prauscher.homeip.net>
+
+$DIR repraesentiert den Installationspfad des Lime-Scripts
+(z.B. /var/www/lime/ )
+
+Vorbereitungen
+--------------
+
+01. Benoetigte PHP-Module:	php-gd, php-mysql
+02. Funktionierendes Mailsystem
+03. Smarty muss installiert sein und unter
+    /usr/share/php/Smarty/Smarty.class.php installiert sein
+    (ggf. ln -s smarty /usr/share/php/Smarty)
+04. Spaetestens beim Mailversenden ist eine max_execution_time von 30 und
+    mehr dringend notwendig. Je nach Wunsch kann dieses Zeitlimit auch
+    noch weiter erhoeht werden und das LIMIT in admin/sendmail.php hoch-
+    gesetzt werden.
+05. Fuer optimales Timing beim Datumswechsel sollte die Zeitzone des Servers
+    passend eingestellt sein. Benutze dpkg-reconfigure tzdata dafuer ;)
+06. Der Apache muss passend eingerichtet werden. Das Admin-Dir braucht
+    mindestens AllowOverride AuthConfig Limit (auch via SSL! Vorsicht in
+    der Default-Config von Apache2!)
+
+Installation
+------------
+
+01. Source entpacken
+02. Webserver benoetigt Schreibzugriff auf:
+	$DIR/templates_c	(Wegen Smarty, nur solang die Templates
+				 veraendert werden)
+	$DIR/statistiken	(Fuer die Statistikseiten & -Bilder)
+03. SQL-Dump einspielen ($DIR/dump.sql)
+04. $DIR/config.inc.php anpassen.
+05. Pfade in $DIR/admin/.htaccess anpassen (AuthUserFile & AuthGroupFile)
+06. AuthName in $DIR/admin/.htaccess anpassen ;)
+07. Benutzer in $DIR/admin/.htpasswd einrichten und in die passenden
+    Gruppen in $DIR/admin/.htgroups eintragen
+08. Sicherheit :o)
+     * $DIR/config.inc.php muss nur vom webserver gelesen werden
+     * generelle PHP / mysql / apache Sicherheit einrichten
+     * UMBEDINGT AllowOverride AuthConfig Limit einstellen, da sonst
+       jeder ins Admininterface kommt. Alternativ $DIR/admin/.htaccess
+       in apache2.conf umsiedeln
+     * mod_removeip oder aehnlich installieren. Alternativ accesslog
+       abschalten (Clientzugriff enthaelt Token im Request)
+09. http://..../lime/setup.php ausfuehren, damit die zusaetzlichen
+    Tabellen erstellt werden.
+10. Unter http://..../lime/admin/ befindet sich das Admininterface,
+    welches via .htaccess gesichert werden kann und ansonsten selbst-
+    erklaerend ist

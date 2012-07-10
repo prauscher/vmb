@@ -1,0 +1,135 @@
+body {
+	color:#000000;
+	background-color:#ffffff;
+}
+
+h1 {
+	margin:0px;
+	color:#666666;
+}
+
+.desc {
+	margin:2px;
+	border:1px solid gray;
+	padding:10px;
+	background-color:#eeeeee;
+	color:#000000;
+	-moz-border-radius:3px;
+}
+
+/*
+ * Hinweisboxen
+ */
+.error, .info, .done {
+	margin:2px;
+	border:1px dotted #000000;
+	padding:2px;
+}
+.error {
+	border-color: #cc0000;
+	background-color: #D73435;
+	color:#000000;
+	font-size:1.2em;
+}
+.done {
+	border-color: #ccddcc;
+	background-color: #13B113;
+	color:#000000;
+	font-size:1.2em;
+}
+.info {
+	border-color: #0000cc;
+	background-color:#007DD6;
+	color:#eeeeee;
+}
+
+/*
+ * Uebersicht
+ */
+.index .title {
+	text-align:left;
+	width:60%;
+}
+
+/*
+ * Tokenlist
+ */
+.tokenlist .token {
+	font-family:monospace;
+}
+.tokenlist .answer {
+	text-align:left;
+}
+
+/*
+ * Auswertung
+ */
+/* Anzeige der Wahlbeteiligung */
+.auswertung .wahlbeteiligung {
+	font-style:italic;
+}
+.auswertung #wahlbeteiligung, .auswertung #votes, .auswertung #tokens {
+	font-weight:bold;
+}
+.auswertung .graph {
+	vertical-align:top;
+}
+.auswertung .graph img {
+	margin:5px;
+}
+.auswertung .graph.full {
+	padding-left:20px;
+}
+/* Eine Antwort in der Tabelle */
+.auswertung .answer {
+	text-align:right;
+}
+.auswertung .optimg.full {
+	padding-left:20px;
+}
+.auswertung .votes, .auswertung .anteil {
+	font-family:monospace;
+	text-align:right;
+}
+.auswertung .anteil {
+	padding-left:20px;
+}
+/* Verlinkung zu Tokenlist & Logs */
+.auswertung a.tokenlist, .auswertung a.loglink {
+	border:2px solid black;
+	-moz-border-radius:5px;
+	text-decoration:none;
+	background-color:#cccccc;
+	color:#000000;
+	padding:2px;
+	margin:5px;
+}
+.auswertung a.tokenlist:hover, .auswertung a.loglink:hover {
+	background-color:#999999;
+	color:#000000;
+}
+
+/*
+ * HIHI
+ */
+.penis {
+	background-color:transparent;
+	color:transparent;
+	font-size:6pt;
+}
+
+/*
+ * Abstimmung
+ */
+.vote #save {
+	background-color:#00cc00;
+	color:#000000;
+}
+.vote #reset {
+	background-color:#aaaaaa;
+	color:#000000;
+}
+.vote #save, .vote #reset {
+	border:2px solid black;
+	-moz-border-radius:5px;
+}

@@ -1,0 +1,24 @@
+AuthType Basic
+AuthName "SECRET ... it@junge-piraten.de"
+AuthUserFile /home/prauscher/public_html/lime/admin/.htpasswd
+AuthGroupFile /home/prauscher/public_html/lime/admin/.htgroups
+Require valid-user
+<Files ~ (insertmails.php|manageblacklist.php)>
+	Require group insertmails
+</Files>
+<Files ~ (composemail.php|previewmail.php|sendmail.php)>
+	Require group writemails
+</Files>
+<Files ~ (composesurvey.php|createsurvey.php)>
+	Require group createsurvey
+</Files>
+<Files ~ (activatesurvey.php|closesurvey.php)>
+	Require group activatesurvey
+</Files>
+<Files ~ (dropsurvey.php)>
+	Require group dropsurvey
+</Files>
+<Files ~ .*\.inc\.php>
+	Order Deny,Allow
+	Deny from All
+</Files>

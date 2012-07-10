@@ -1,0 +1,21 @@
+body {
+	background-color: #CCCCCC;
+	color: #000000;
+	font-family:sans-serif;
+	margin-left:10px;
+}
+
+#logo {
+	position:fixed;
+	bottom:30px;
+	right:50px;
+}
+
+fieldset {
+	border:0px;
+	padding:0px;
+	margin:0px;
+}
+fieldset.options {
+	margin:5px;
+}
